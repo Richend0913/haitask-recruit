@@ -3,167 +3,724 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>&#x914D;&#x9054;&#x30B9;&#x30BF;&#x30C3;&#x30D5;&#x52DF;&#x96C6;</title>
+<title>&#x914D;&#x9054;&#x30B9;&#x30BF;&#x30C3;&#x30D5;&#x52DF;&#x96C6; | HaiTask</title>
+<meta name="description" content="&#x795E;&#x5948;&#x5DDD;&#x770C;&#x5185;&#x3067;&#x914D;&#x9054;&#x30B9;&#x30BF;&#x30C3;&#x30D5;&#x3092;&#x52DF;&#x96C6;&#x4E2D;&#x3002;&#x672A;&#x7D4C;&#x9A13;OK&#x30FB;&#x6B63;&#x793E;&#x54E1;&#x767B;&#x7528;&#x3042;&#x308A;&#x3002;">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku Gothic ProN',Meiryo,sans-serif;background:#f5f5f5;color:#333;line-height:1.6}
-.hero{background:linear-gradient(135deg,#1976d2,#1565c0);color:#fff;padding:48px 20px 40px;text-align:center}
-.hero h1{font-size:28px;margin-bottom:8px}
-.hero p{font-size:16px;opacity:.9}
-.referrer-badge{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:6px 16px;margin-top:12px;font-size:14px}
-.container{max-width:600px;margin:0 auto;padding:16px}
-.card{background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-.card h2{font-size:20px;color:#1976d2;margin-bottom:16px;border-left:4px solid #1976d2;padding-left:12px}
-.card h3{font-size:16px;margin:16px 0 8px;color:#333}
-.info-grid{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:15px}
-.info-grid dt{font-weight:bold;color:#555}
-.info-grid dd{color:#333}
-ul{padding-left:20px}
-ul li{margin-bottom:6px;font-size:15px}
-.highlight{background:#e3f2fd;border-radius:8px;padding:12px 16px;margin:12px 0;font-size:15px}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-weight:bold;margin-bottom:6px;font-size:14px;color:#555}
-.form-group .required{color:#d32f2f;margin-left:4px;font-size:12px}
-.form-group input,.form-group textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:16px;font-family:inherit;transition:border-color .2s}
-.form-group input:focus,.form-group textarea:focus{outline:none;border-color:#1976d2;box-shadow:0 0 0 3px rgba(25,118,210,.1)}
-.form-group textarea{resize:vertical;min-height:80px}
-.submit-btn{width:100%;padding:14px;background:#1976d2;color:#fff;border:none;border-radius:8px;font-size:18px;font-weight:bold;cursor:pointer;transition:background .2s}
-.submit-btn:hover{background:#1565c0}
-.submit-btn:disabled{background:#bbb;cursor:not-allowed}
-.success-card{text-align:center;padding:48px 24px}
-.success-card .icon{font-size:64px;margin-bottom:16px}
-.success-card h2{color:#2e7d32;border:none;padding:0;margin-bottom:12px}
-.success-card p{font-size:16px;color:#555}
-.error-msg{color:#d32f2f;font-size:14px;margin-top:8px;display:none}
-.footer{text-align:center;padding:24px;color:#999;font-size:12px}
+:root {
+  --primary: #1565c0;
+  --primary-dark: #0d47a1;
+  --primary-light: #e3f2fd;
+  --accent: #ff6d00;
+  --accent-light: #fff3e0;
+  --success: #2e7d32;
+  --success-light: #e8f5e9;
+  --text: #212121;
+  --text-secondary: #616161;
+  --text-light: #9e9e9e;
+  --bg: #fafafa;
+  --card: #ffffff;
+  --border: #e0e0e0;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #0d47a1 0%, #1565c0 40%, #1e88e5 100%);
+  color: #fff;
+  padding: 56px 20px 48px;
+  text-align: center;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 24px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  animation: fadeInDown 0.6s ease;
+}
+.hero h1 {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  animation: fadeInUp 0.6s ease;
+}
+.hero-sub {
+  font-size: 16px;
+  opacity: 0.9;
+  font-weight: 400;
+  animation: fadeInUp 0.6s ease 0.1s both;
+}
+.referrer-box {
+  display: none;
+  margin-top: 16px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 14px;
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+.referrer-box .material-icons-round { font-size: 18px; vertical-align: -3px; margin-right: 4px; }
+
+/* Tags bar */
+.tags-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255,255,255,0.9);
+  color: var(--primary-dark);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ===== SECTION ===== */
+.section {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 24px;
+  margin: 16px auto;
+  max-width: 640px;
+  animation: fadeInUp 0.5s ease both;
+}
+.section:first-of-type { margin-top: -24px; position: relative; z-index: 2; }
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.section-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.section-icon .material-icons-round { font-size: 22px; color: #fff; }
+.section-icon.blue { background: linear-gradient(135deg, #1565c0, #1e88e5); }
+.section-icon.orange { background: linear-gradient(135deg, #e65100, #ff6d00); }
+.section-icon.green { background: linear-gradient(135deg, #2e7d32, #43a047); }
+.section-icon.purple { background: linear-gradient(135deg, #6a1b9a, #8e24aa); }
+.section-icon.red { background: linear-gradient(135deg, #c62828, #e53935); }
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ===== APPEAL POINTS ===== */
+.appeal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.appeal-item {
+  background: var(--primary-light);
+  border-radius: var(--radius-sm);
+  padding: 16px 14px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.appeal-item:hover { transform: translateY(-2px); }
+.appeal-item .material-icons-round {
+  font-size: 32px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.appeal-item .label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.appeal-item .desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ===== JOB DETAILS TABLE ===== */
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.detail-table tr {
+  border-bottom: 1px solid var(--border);
+}
+.detail-table tr:last-child { border-bottom: none; }
+.detail-table th {
+  text-align: left;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 14px 12px 14px 0;
+  width: 100px;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.detail-table td {
+  font-size: 15px;
+  padding: 14px 0;
+  color: var(--text);
+}
+.detail-table td .sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+.detail-chip {
+  display: inline-block;
+  background: var(--accent-light);
+  color: #e65100;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-left: 8px;
+}
+
+/* ===== FLOW ===== */
+.flow-list { list-style: none; }
+.flow-item {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0;
+  position: relative;
+}
+.flow-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 48px;
+  bottom: -4px;
+  width: 2px;
+  background: var(--border);
+}
+.flow-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.flow-body { flex: 1; padding-top: 6px; }
+.flow-title { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+.flow-desc { font-size: 13px; color: var(--text-secondary); }
+
+/* ===== FORM ===== */
+.form-group { margin-bottom: 20px; }
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.badge-required {
+  font-size: 10px;
+  font-weight: 700;
+  background: #c62828;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.badge-optional {
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--text-light);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  font-family: inherit;
+  background: var(--bg);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+}
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(21,101,192,0.1);
+  background: #fff;
+}
+.form-input::placeholder, .form-textarea::placeholder {
+  color: var(--text-light);
+}
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.form-hint {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 6px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--accent), #ff8f00);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 18px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(255,109,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255,109,0,0.4);
+}
+.submit-btn:active { transform: translateY(0); }
+.submit-btn:disabled {
+  background: #bdbdbd;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+.submit-btn .material-icons-round { font-size: 22px; }
+
+.error-msg {
+  background: #ffebee;
+  color: #c62828;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+.error-msg .material-icons-round { font-size: 20px; }
+
+/* ===== SUCCESS ===== */
+.success-section {
+  display: none;
+  text-align: center;
+  padding: 56px 24px;
+  margin: -24px auto 16px;
+  position: relative;
+  z-index: 2;
+}
+.success-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--success-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.success-icon .material-icons-round { font-size: 44px; color: var(--success); }
+.success-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--success);
+  margin-bottom: 12px;
+}
+.success-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .hero { padding: 44px 16px 40px; }
+  .hero h1 { font-size: 26px; }
+  .section { padding: 24px 20px; margin: 12px 16px; }
+  .section:first-of-type { margin-top: -20px; }
+  .appeal-grid { gap: 8px; }
+  .appeal-item { padding: 14px 10px; }
+  .detail-table th { width: 80px; font-size: 12px; }
+  .detail-table td { font-size: 14px; }
+}
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <h1>&#x914D;&#x9054;&#x30B9;&#x30BF;&#x30C3;&#x30D5;&#x52DF;&#x96C6;</h1>
-  <p>&#x4E00;&#x7DD2;&#x306B;&#x50CD;&#x304D;&#x307E;&#x305B;&#x3093;&#x304B;&#xFF1F;</p>
-  <div class="referrer-badge" id="referrerBadge" style="display:none"></div>
-</div>
-
-<div class="container" id="mainContent">
-
-  <div class="card">
-    <h2>&#x304A;&#x4ED5;&#x4E8B;&#x5185;&#x5BB9;</h2>
-    <ul>
-      <li>&#x90F5;&#x4FBF;&#x5C40;&#x304B;&#x3089;&#x306E;&#x914D;&#x9054;&#x696D;&#x52D9;</li>
-      <li>&#x62C5;&#x5F53;&#x30A8;&#x30EA;&#x30A2;&#x3078;&#x306E;&#x914D;&#x9054;&#xFF08;1&#x4FBF;&#xFF5E;3&#x4FBF;&#xFF09;</li>
-      <li>&#x30C1;&#x30FC;&#x30E0;&#x3067;&#x306E;&#x5354;&#x529B;&#x4F53;&#x5236;</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>&#x52DF;&#x96C6;&#x6761;&#x4EF6;</h2>
-    <dl class="info-grid">
-      <dt>&#x96C7;&#x7528;&#x5F62;&#x614B;</dt>
-      <dd>&#x696D;&#x52D9;&#x59D4;&#x8A17;</dd>
-      <dt>&#x52E4;&#x52D9;&#x6642;&#x9593;</dt>
-      <dd>8:00&#xFF5E;17:00&#xFF08;&#x76F8;&#x8AC7;&#x53EF;&#xFF09;</dd>
-      <dt>&#x52E4;&#x52D9;&#x5730;</dt>
-      <dd>&#x795E;&#x5948;&#x5DDD;&#x770C;&#x5185;</dd>
-      <dt>&#x5FDC;&#x52DF;&#x8CC7;&#x683C;</dt>
-      <dd>&#x8981;&#x666E;&#x901A;&#x514D;&#x8A31;</dd>
-    </dl>
-    <div class="highlight">
-      &#x2728; &#x672A;&#x7D4C;&#x9A13;&#x8005;&#x6B53;&#x8FCE;&#xFF01;&#x4E01;&#x5BE7;&#x306B;&#x6307;&#x5C0E;&#x3057;&#x307E;&#x3059;&#x3002;
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="material-icons-round" style="font-size:16px">local_shipping</span>
+      &#x6B63;&#x793E;&#x54E1;&#x767B;&#x7528;&#x3042;&#x308A;
+    </div>
+    <h1>&#x914D;&#x9054;&#x30B9;&#x30BF;&#x30C3;&#x30D5;&#x52DF;&#x96C6;</h1>
+    <p class="hero-sub">&#x795E;&#x5948;&#x5DDD;&#x770C;&#x5185;&#x3067;&#x4E00;&#x7DD2;&#x306B;&#x50CD;&#x304D;&#x307E;&#x305B;&#x3093;&#x304B;&#xFF1F;</p>
+    <div class="tags-bar">
+      <span class="tag">&#x2728; &#x672A;&#x7D4C;&#x9A13;OK</span>
+      <span class="tag">&#x1F4B0; &#x9AD8;&#x53CE;&#x5165;</span>
+      <span class="tag">&#x1F697; &#x8ECA;&#x4E21;&#x8CAC;&#x4E0E;</span>
+      <span class="tag">&#x1F4C5; &#x9031;&#x4F11;2&#x65E5;&#x53EF;</span>
+    </div>
+    <div class="referrer-box" id="referrerBox">
+      <span class="material-icons-round">person</span>
+      <span id="referrerText"></span>
     </div>
   </div>
+</header>
 
-  <div class="card">
-    <h2>&#x5FDC;&#x52DF;&#x30D5;&#x30A9;&#x30FC;&#x30E0;</h2>
-    <form id="recruitForm">
-      <div class="form-group">
-        <label>&#x304A;&#x540D;&#x524D;<span class="required">&#x5FC5;&#x9808;</span></label>
-        <input type="text" id="applicantName" placeholder="&#x4F8B;: &#x5C71;&#x7530; &#x592A;&#x90CE;" required>
-      </div>
-      <div class="form-group">
-        <label>&#x96FB;&#x8A71;&#x756A;&#x53F7;<span class="required">&#x5FC5;&#x9808;</span></label>
-        <input type="tel" id="applicantPhone" placeholder="&#x4F8B;: 090-1234-5678" required>
-      </div>
-      <div class="form-group">
-        <label>&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;</label>
-        <input type="email" id="applicantEmail" placeholder="&#x4F8B;: taro@example.com">
-      </div>
-      <div class="form-group">
-        <label>&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;</label>
-        <textarea id="message" placeholder="&#x8CEA;&#x554F;&#x3084;&#x5E0C;&#x671B;&#x304C;&#x3042;&#x308C;&#x3070;&#x3054;&#x8A18;&#x5165;&#x304F;&#x3060;&#x3055;&#x3044;"></textarea>
-      </div>
-      <div class="error-msg" id="errorMsg"></div>
-      <button type="submit" class="submit-btn" id="submitBtn">&#x5FDC;&#x52DF;&#x3059;&#x308B;</button>
-    </form>
+<main id="mainContent">
+
+<!-- APPEAL POINTS -->
+<section class="section" style="animation-delay:0.1s">
+  <div class="section-header">
+    <div class="section-icon blue"><span class="material-icons-round">stars</span></div>
+    <h2 class="section-title">&#x3053;&#x306E;&#x304A;&#x4ED5;&#x4E8B;&#x306E;&#x9B45;&#x529B;</h2>
   </div>
-
-</div>
-
-<div class="container" id="successContent" style="display:none">
-  <div class="card success-card">
-    <div class="icon">&#x2705;</div>
-    <h2>&#x5FDC;&#x52DF;&#x3042;&#x308A;&#x304C;&#x3068;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;&#xFF01;</h2>
-    <p>&#x5185;&#x5BB9;&#x3092;&#x78BA;&#x8A8D;&#x306E;&#x3046;&#x3048;&#x3001;&#x62C5;&#x5F53;&#x8005;&#x3088;&#x308A;&#x3054;&#x9023;&#x7D61;&#x3044;&#x305F;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+  <div class="appeal-grid">
+    <div class="appeal-item">
+      <span class="material-icons-round">school</span>
+      <div class="label">&#x672A;&#x7D4C;&#x9A13;&#x6B53;&#x8FCE;</div>
+      <div class="desc">&#x4E01;&#x5BE7;&#x306A;&#x7814;&#x4FEE;&#x3042;&#x308A;</div>
+    </div>
+    <div class="appeal-item">
+      <span class="material-icons-round">payments</span>
+      <div class="label">&#x5B89;&#x5B9A;&#x53CE;&#x5165;</div>
+      <div class="desc">&#x6708;&#x53CE;30&#x4E07;&#x5186;&#xFF5E;</div>
+    </div>
+    <div class="appeal-item">
+      <span class="material-icons-round">directions_car</span>
+      <div class="label">&#x8ECA;&#x4E21;&#x8CAC;&#x4E0E;</div>
+      <div class="desc">&#x8ECA;&#x304C;&#x306A;&#x304F;&#x3066;&#x3082;OK</div>
+    </div>
+    <div class="appeal-item">
+      <span class="material-icons-round">groups</span>
+      <div class="label">&#x30C1;&#x30FC;&#x30E0;&#x5236;</div>
+      <div class="desc">&#x5354;&#x529B;&#x3057;&#x5408;&#x3048;&#x308B;&#x74B0;&#x5883;</div>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="footer">
-  &copy; HaiTask
-</div>
+<!-- JOB DETAILS -->
+<section class="section" style="animation-delay:0.2s">
+  <div class="section-header">
+    <div class="section-icon orange"><span class="material-icons-round">description</span></div>
+    <h2 class="section-title">&#x52DF;&#x96C6;&#x8981;&#x9805;</h2>
+  </div>
+  <table class="detail-table">
+    <tr>
+      <th>&#x8077;&#x7A2E;</th>
+      <td>&#x914D;&#x9054;&#x30B9;&#x30BF;&#x30C3;&#x30D5;<span class="detail-chip">&#x6025;&#x52DF;</span></td>
+    </tr>
+    <tr>
+      <th>&#x4ED5;&#x4E8B;&#x5185;&#x5BB9;</th>
+      <td>
+        &#x90F5;&#x4FBF;&#x5C40;&#x304B;&#x3089;&#x306E;&#x914D;&#x9054;&#x696D;&#x52D9;
+        <div class="sub">&#x62C5;&#x5F53;&#x30A8;&#x30EA;&#x30A2;&#x3078;&#x306E;&#x914D;&#x9054;&#xFF08;1&#x4FBF;&#xFF5E;3&#x4FBF;/&#x65E5;&#xFF09;</div>
+      </td>
+    </tr>
+    <tr>
+      <th>&#x96C7;&#x7528;&#x5F62;&#x614B;</th>
+      <td>&#x696D;&#x52D9;&#x59D4;&#x8A17;<span class="detail-chip">&#x6B63;&#x793E;&#x54E1;&#x767B;&#x7528;&#x3042;&#x308A;</span></td>
+    </tr>
+    <tr>
+      <th>&#x52E4;&#x52D9;&#x6642;&#x9593;</th>
+      <td>
+        8:00 &#xFF5E; 17:00
+        <div class="sub">&#x203B; &#x52E4;&#x52D9;&#x6642;&#x9593;&#x306E;&#x76F8;&#x8AC7;&#x53EF;</div>
+      </td>
+    </tr>
+    <tr>
+      <th>&#x52E4;&#x52D9;&#x5730;</th>
+      <td>&#x795E;&#x5948;&#x5DDD;&#x770C;&#x5185;&#xFF08;&#x62C5;&#x5F53;&#x30A8;&#x30EA;&#x30A2;&#x306B;&#x3088;&#x308B;&#xFF09;</td>
+    </tr>
+    <tr>
+      <th>&#x5FDC;&#x52DF;&#x8CC7;&#x683C;</th>
+      <td>
+        &#x8981;&#x666E;&#x901A;&#x514D;&#x8A31;&#xFF08;AT&#x9650;&#x5B9A;&#x53EF;&#xFF09;
+        <div class="sub">&#x203B; &#x5B66;&#x6B74;&#x30FB;&#x7D4C;&#x9A13;&#x4E0D;&#x554F;</div>
+      </td>
+    </tr>
+    <tr>
+      <th>&#x4F11;&#x65E5;</th>
+      <td>&#x9031;&#x4F11;2&#x65E5;&#x53EF;&#xFF08;&#x30B7;&#x30D5;&#x30C8;&#x5236;&#xFF09;</td>
+    </tr>
+  </table>
+</section>
+
+<!-- APPLICATION FLOW -->
+<section class="section" style="animation-delay:0.3s">
+  <div class="section-header">
+    <div class="section-icon green"><span class="material-icons-round">route</span></div>
+    <h2 class="section-title">&#x5FDC;&#x52DF;&#x304B;&#x3089;&#x52E4;&#x52D9;&#x958B;&#x59CB;&#x307E;&#x3067;</h2>
+  </div>
+  <ol class="flow-list">
+    <li class="flow-item">
+      <div class="flow-num">1</div>
+      <div class="flow-body">
+        <div class="flow-title">&#x4E0B;&#x8A18;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x304B;&#x3089;&#x5FDC;&#x52DF;</div>
+        <div class="flow-desc">&#x304A;&#x540D;&#x524D;&#x3068;&#x96FB;&#x8A71;&#x756A;&#x53F7;&#x3092;&#x5165;&#x529B;&#x3059;&#x308B;&#x3060;&#x3051;&#xFF01;</div>
+      </div>
+    </li>
+    <li class="flow-item">
+      <div class="flow-num">2</div>
+      <div class="flow-body">
+        <div class="flow-title">&#x62C5;&#x5F53;&#x8005;&#x3088;&#x308A;&#x3054;&#x9023;&#x7D61;</div>
+        <div class="flow-desc">&#x65E5;&#x7A0B;&#x8ABF;&#x6574;&#x306E;&#x3046;&#x3048;&#x9762;&#x8AC7;&#x3092;&#x884C;&#x3044;&#x307E;&#x3059;</div>
+      </div>
+    </li>
+    <li class="flow-item">
+      <div class="flow-num">3</div>
+      <div class="flow-body">
+        <div class="flow-title">&#x7814;&#x4FEE;&#x30FB;&#x540C;&#x884C;&#x671F;&#x9593;</div>
+        <div class="flow-desc">&#x5148;&#x8F29;&#x304C;&#x4E01;&#x5BE7;&#x306B;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x307E;&#x3059;</div>
+      </div>
+    </li>
+    <li class="flow-item">
+      <div class="flow-num">4</div>
+      <div class="flow-body">
+        <div class="flow-title">&#x52E4;&#x52D9;&#x30B9;&#x30BF;&#x30FC;&#x30C8;&#xFF01;</div>
+        <div class="flow-desc">&#x3042;&#x306A;&#x305F;&#x306E;&#x30DA;&#x30FC;&#x30B9;&#x3067;&#x50CD;&#x3051;&#x307E;&#x3059;</div>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="section" style="animation-delay:0.4s">
+  <div class="section-header">
+    <div class="section-icon red"><span class="material-icons-round">edit_note</span></div>
+    <h2 class="section-title">&#x5FDC;&#x52DF;&#x30D5;&#x30A9;&#x30FC;&#x30E0;</h2>
+  </div>
+  <form id="recruitForm" novalidate>
+    <div class="form-group">
+      <label class="form-label">
+        &#x304A;&#x540D;&#x524D;
+        <span class="badge-required">&#x5FC5;&#x9808;</span>
+      </label>
+      <input type="text" class="form-input" id="applicantName" placeholder="&#x4F8B;&#xFF09;&#x5C71;&#x7530; &#x592A;&#x90CE;" required>
+    </div>
+    <div class="form-group">
+      <label class="form-label">
+        &#x96FB;&#x8A71;&#x756A;&#x53F7;
+        <span class="badge-required">&#x5FC5;&#x9808;</span>
+      </label>
+      <input type="tel" class="form-input" id="applicantPhone" placeholder="&#x4F8B;&#xFF09;090-1234-5678" required>
+      <div class="form-hint">&#x203B; &#x62C5;&#x5F53;&#x8005;&#x304B;&#x3089;&#x306E;&#x3054;&#x9023;&#x7D61;&#x306B;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;</div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">
+        &#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;
+        <span class="badge-optional">&#x4EFB;&#x610F;</span>
+      </label>
+      <input type="email" class="form-input" id="applicantEmail" placeholder="&#x4F8B;&#xFF09;taro@example.com">
+    </div>
+    <div class="form-group">
+      <label class="form-label">
+        &#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;
+        <span class="badge-optional">&#x4EFB;&#x610F;</span>
+      </label>
+      <textarea class="form-textarea" id="message" placeholder="&#x8CEA;&#x554F;&#x3084;&#x5E0C;&#x671B;&#x306E;&#x52E4;&#x52D9;&#x6761;&#x4EF6;&#x306A;&#x3069;&#x304C;&#x3042;&#x308C;&#x3070;&#x3054;&#x8A18;&#x5165;&#x304F;&#x3060;&#x3055;&#x3044;"></textarea>
+    </div>
+    <div class="error-msg" id="errorMsg">
+      <span class="material-icons-round">error</span>
+      <span id="errorText"></span>
+    </div>
+    <button type="submit" class="submit-btn" id="submitBtn">
+      <span class="material-icons-round">send</span>
+      &#x5FDC;&#x52DF;&#x3059;&#x308B;
+    </button>
+  </form>
+</section>
+
+</main>
+
+<!-- SUCCESS -->
+<section class="section success-section" id="successContent">
+  <div class="success-icon">
+    <span class="material-icons-round">check_circle</span>
+  </div>
+  <h2 class="success-title">&#x5FDC;&#x52DF;&#x3042;&#x308A;&#x304C;&#x3068;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;&#xFF01;</h2>
+  <p class="success-desc">
+    &#x5185;&#x5BB9;&#x3092;&#x78BA;&#x8A8D;&#x306E;&#x3046;&#x3048;&#x3001;<br>
+    &#x62C5;&#x5F53;&#x8005;&#x3088;&#x308A;&#x3054;&#x9023;&#x7D61;&#x3044;&#x305F;&#x3057;&#x307E;&#x3059;&#x3002;<br>
+    <small style="color:var(--text-light)">&#x203B; &#x901A;&#x5E38;1&#xFF5E;2&#x55B6;&#x696D;&#x65E5;&#x4EE5;&#x5185;</small>
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>&copy; HaiTask</p>
+</footer>
 
 <script>
-const API_URL = 'https://fwsyblvrvmyyrzyozizx.supabase.co/functions/v1/recruit';
-const params = new URLSearchParams(window.location.search);
-const referrerId = params.get('ref');
+var API_URL = 'https://fwsyblvrvmyyrzyozizx.supabase.co/functions/v1/recruit';
+var params = new URLSearchParams(window.location.search);
+var referrerId = params.get('ref');
 
-// Load referrer name
 if (referrerId) {
   fetch(API_URL + '?ref=' + encodeURIComponent(referrerId))
-    .then(r => r.json())
-    .then(data => {
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
       if (data.referrer_name) {
-        const badge = document.getElementById('referrerBadge');
-        badge.textContent = data.referrer_name + ' \u3055\u3093\u304B\u3089\u306E\u7D39\u4ECB';
-        badge.style.display = 'inline-block';
+        var box = document.getElementById('referrerBox');
+        document.getElementById('referrerText').textContent = data.referrer_name + ' \u3055\u3093\u304B\u3089\u306E\u3054\u7D39\u4ECB';
+        box.style.display = 'inline-block';
       }
     })
-    .catch(() => {});
+    .catch(function() {});
 }
 
-// Form submission
-document.getElementById('recruitForm').addEventListener('submit', async (e) => {
+document.getElementById('recruitForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  const btn = document.getElementById('submitBtn');
-  const errorEl = document.getElementById('errorMsg');
+  var btn = document.getElementById('submitBtn');
+  var errorEl = document.getElementById('errorMsg');
+  var errorText = document.getElementById('errorText');
   errorEl.style.display = 'none';
-  btn.disabled = true;
-  btn.textContent = '\u9001\u4FE1\u4E2D...';
 
-  try {
-    const res = await fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        applicant_name: document.getElementById('applicantName').value.trim(),
-        applicant_phone: document.getElementById('applicantPhone').value.trim(),
-        applicant_email: document.getElementById('applicantEmail').value.trim() || null,
-        message: document.getElementById('message').value.trim() || null,
-        referrer_id: referrerId,
-      }),
-    });
+  var name = document.getElementById('applicantName').value.trim();
+  var phone = document.getElementById('applicantPhone').value.trim();
 
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'error');
-
-    document.getElementById('mainContent').style.display = 'none';
-    document.getElementById('successContent').style.display = 'block';
-  } catch (err) {
-    errorEl.textContent = '\u9001\u4FE1\u306B\u5931\u6557\u3057\u307E\u3057\u305F\u3002\u3082\u3046\u4E00\u5EA6\u304A\u8A66\u3057\u304F\u3060\u3055\u3044\u3002';
-    errorEl.style.display = 'block';
-    btn.disabled = false;
-    btn.textContent = '\u5FDC\u52DF\u3059\u308B';
+  if (!name || !phone) {
+    errorText.textContent = '\u304A\u540D\u524D\u3068\u96FB\u8A71\u756A\u53F7\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044\u3002';
+    errorEl.style.display = 'flex';
+    return;
   }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="material-icons-round" style="animation:spin 1s linear infinite">sync</span> \u9001\u4FE1\u4E2D...';
+
+  fetch(API_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      applicant_name: name,
+      applicant_phone: phone,
+      applicant_email: document.getElementById('applicantEmail').value.trim() || null,
+      message: document.getElementById('message').value.trim() || null,
+      referrer_id: referrerId,
+    }),
+  })
+  .then(function(res) {
+    return res.json().then(function(data) {
+      if (!res.ok) throw new Error(data.error || 'error');
+      document.getElementById('mainContent').style.display = 'none';
+      document.getElementById('successContent').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })
+  .catch(function() {
+    errorText.textContent = '\u9001\u4FE1\u306B\u5931\u6557\u3057\u307E\u3057\u305F\u3002\u3082\u3046\u4E00\u5EA6\u304A\u8A66\u3057\u304F\u3060\u3055\u3044\u3002';
+    errorEl.style.display = 'flex';
+    btn.disabled = false;
+    btn.innerHTML = '<span class="material-icons-round">send</span> \u5FDC\u52DF\u3059\u308B';
+  });
 });
 </script>
 
