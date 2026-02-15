@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>&#x914D;&#x9054;&#x30B9;&#x30BF;&#x30C3;&#x30D5;&#x52DF;&#x96C6;</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku Gothic ProN',Meiryo,sans-serif;background:#f5f5f5;color:#333;line-height:1.6}
+.hero{background:linear-gradient(135deg,#1976d2,#1565c0);color:#fff;padding:48px 20px 40px;text-align:center}
+.hero h1{font-size:28px;margin-bottom:8px}
+.hero p{font-size:16px;opacity:.9}
+.referrer-badge{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;padding:6px 16px;margin-top:12px;font-size:14px}
+.container{max-width:600px;margin:0 auto;padding:16px}
+.card{background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.card h2{font-size:20px;color:#1976d2;margin-bottom:16px;border-left:4px solid #1976d2;padding-left:12px}
+.card h3{font-size:16px;margin:16px 0 8px;color:#333}
+.info-grid{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:15px}
+.info-grid dt{font-weight:bold;color:#555}
+.info-grid dd{color:#333}
+ul{padding-left:20px}
+ul li{margin-bottom:6px;font-size:15px}
+.highlight{background:#e3f2fd;border-radius:8px;padding:12px 16px;margin:12px 0;font-size:15px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-weight:bold;margin-bottom:6px;font-size:14px;color:#555}
+.form-group .required{color:#d32f2f;margin-left:4px;font-size:12px}
+.form-group input,.form-group textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;font-size:16px;font-family:inherit;transition:border-color .2s}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:#1976d2;box-shadow:0 0 0 3px rgba(25,118,210,.1)}
+.form-group textarea{resize:vertical;min-height:80px}
+.submit-btn{width:100%;padding:14px;background:#1976d2;color:#fff;border:none;border-radius:8px;font-size:18px;font-weight:bold;cursor:pointer;transition:background .2s}
+.submit-btn:hover{background:#1565c0}
+.submit-btn:disabled{background:#bbb;cursor:not-allowed}
+.success-card{text-align:center;padding:48px 24px}
+.success-card .icon{font-size:64px;margin-bottom:16px}
+.success-card h2{color:#2e7d32;border:none;padding:0;margin-bottom:12px}
+.success-card p{font-size:16px;color:#555}
+.error-msg{color:#d32f2f;font-size:14px;margin-top:8px;display:none}
+.footer{text-align:center;padding:24px;color:#999;font-size:12px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>&#x914D;&#x9054;&#x30B9;&#x30BF;&#x30C3;&#x30D5;&#x52DF;&#x96C6;</h1>
+  <p>&#x4E00;&#x7DD2;&#x306B;&#x50CD;&#x304D;&#x307E;&#x305B;&#x3093;&#x304B;&#xFF1F;</p>
+  <div class="referrer-badge" id="referrerBadge" style="display:none"></div>
+</div>
+
+<div class="container" id="mainContent">
+
+  <div class="card">
+    <h2>&#x304A;&#x4ED5;&#x4E8B;&#x5185;&#x5BB9;</h2>
+    <ul>
+      <li>&#x90F5;&#x4FBF;&#x5C40;&#x304B;&#x3089;&#x306E;&#x914D;&#x9054;&#x696D;&#x52D9;</li>
+      <li>&#x62C5;&#x5F53;&#x30A8;&#x30EA;&#x30A2;&#x3078;&#x306E;&#x914D;&#x9054;&#xFF08;1&#x4FBF;&#xFF5E;3&#x4FBF;&#xFF09;</li>
+      <li>&#x30C1;&#x30FC;&#x30E0;&#x3067;&#x306E;&#x5354;&#x529B;&#x4F53;&#x5236;</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>&#x52DF;&#x96C6;&#x6761;&#x4EF6;</h2>
+    <dl class="info-grid">
+      <dt>&#x96C7;&#x7528;&#x5F62;&#x614B;</dt>
+      <dd>&#x696D;&#x52D9;&#x59D4;&#x8A17;</dd>
+      <dt>&#x52E4;&#x52D9;&#x6642;&#x9593;</dt>
+      <dd>8:00&#xFF5E;17:00&#xFF08;&#x76F8;&#x8AC7;&#x53EF;&#xFF09;</dd>
+      <dt>&#x52E4;&#x52D9;&#x5730;</dt>
+      <dd>&#x795E;&#x5948;&#x5DDD;&#x770C;&#x5185;</dd>
+      <dt>&#x5FDC;&#x52DF;&#x8CC7;&#x683C;</dt>
+      <dd>&#x8981;&#x666E;&#x901A;&#x514D;&#x8A31;</dd>
+    </dl>
+    <div class="highlight">
+      &#x2728; &#x672A;&#x7D4C;&#x9A13;&#x8005;&#x6B53;&#x8FCE;&#xFF01;&#x4E01;&#x5BE7;&#x306B;&#x6307;&#x5C0E;&#x3057;&#x307E;&#x3059;&#x3002;
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>&#x5FDC;&#x52DF;&#x30D5;&#x30A9;&#x30FC;&#x30E0;</h2>
+    <form id="recruitForm">
+      <div class="form-group">
+        <label>&#x304A;&#x540D;&#x524D;<span class="required">&#x5FC5;&#x9808;</span></label>
+        <input type="text" id="applicantName" placeholder="&#x4F8B;: &#x5C71;&#x7530; &#x592A;&#x90CE;" required>
+      </div>
+      <div class="form-group">
+        <label>&#x96FB;&#x8A71;&#x756A;&#x53F7;<span class="required">&#x5FC5;&#x9808;</span></label>
+        <input type="tel" id="applicantPhone" placeholder="&#x4F8B;: 090-1234-5678" required>
+      </div>
+      <div class="form-group">
+        <label>&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;</label>
+        <input type="email" id="applicantEmail" placeholder="&#x4F8B;: taro@example.com">
+      </div>
+      <div class="form-group">
+        <label>&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;</label>
+        <textarea id="message" placeholder="&#x8CEA;&#x554F;&#x3084;&#x5E0C;&#x671B;&#x304C;&#x3042;&#x308C;&#x3070;&#x3054;&#x8A18;&#x5165;&#x304F;&#x3060;&#x3055;&#x3044;"></textarea>
+      </div>
+      <div class="error-msg" id="errorMsg"></div>
+      <button type="submit" class="submit-btn" id="submitBtn">&#x5FDC;&#x52DF;&#x3059;&#x308B;</button>
+    </form>
+  </div>
+
+</div>
+
+<div class="container" id="successContent" style="display:none">
+  <div class="card success-card">
+    <div class="icon">&#x2705;</div>
+    <h2>&#x5FDC;&#x52DF;&#x3042;&#x308A;&#x304C;&#x3068;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;&#xFF01;</h2>
+    <p>&#x5185;&#x5BB9;&#x3092;&#x78BA;&#x8A8D;&#x306E;&#x3046;&#x3048;&#x3001;&#x62C5;&#x5F53;&#x8005;&#x3088;&#x308A;&#x3054;&#x9023;&#x7D61;&#x3044;&#x305F;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+  </div>
+</div>
+
+<div class="footer">
+  &copy; HaiTask
+</div>
+
+<script>
+const API_URL = 'https://fwsyblvrvmyyrzyozizx.supabase.co/functions/v1/recruit';
+const params = new URLSearchParams(window.location.search);
+const referrerId = params.get('ref');
+
+// Load referrer name
+if (referrerId) {
+  fetch(API_URL + '?ref=' + encodeURIComponent(referrerId))
+    .then(r => r.json())
+    .then(data => {
+      if (data.referrer_name) {
+        const badge = document.getElementById('referrerBadge');
+        badge.textContent = data.referrer_name + ' \u3055\u3093\u304B\u3089\u306E\u7D39\u4ECB';
+        badge.style.display = 'inline-block';
+      }
+    })
+    .catch(() => {});
+}
+
+// Form submission
+document.getElementById('recruitForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const errorEl = document.getElementById('errorMsg');
+  errorEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = '\u9001\u4FE1\u4E2D...';
+
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        applicant_name: document.getElementById('applicantName').value.trim(),
+        applicant_phone: document.getElementById('applicantPhone').value.trim(),
+        applicant_email: document.getElementById('applicantEmail').value.trim() || null,
+        message: document.getElementById('message').value.trim() || null,
+        referrer_id: referrerId,
+      }),
+    });
+
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'error');
+
+    document.getElementById('mainContent').style.display = 'none';
+    document.getElementById('successContent').style.display = 'block';
+  } catch (err) {
+    errorEl.textContent = '\u9001\u4FE1\u306B\u5931\u6557\u3057\u307E\u3057\u305F\u3002\u3082\u3046\u4E00\u5EA6\u304A\u8A66\u3057\u304F\u3060\u3055\u3044\u3002';
+    errorEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = '\u5FDC\u52DF\u3059\u308B';
+  }
+});
+</script>
+
+</body>
+</html>
